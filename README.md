@@ -18,34 +18,41 @@ Your README.md must include:
 
 # Project Name
 
-**Author**: Your Name Goes Here
+**Author**: Yirim Seck
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+This app allows user to search their city and it returns weather information requested from the frontend.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+in order to get satrted you going to have to create a new repository included with the proper files using node.js, dorenv, express and reactbootstrap.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+Architecture includes React, React Bootstrap, netlify, locationIQ, javascript, css.
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+08-04-2021 7:15pm built out my map, created my try/catch, succesfgully rendered image. 
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
-Time Estimates
-For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
 
-Name of feature: ________________________________
+Colaboration: Willem Jacobs - UML diagram for lab 6.
 
-Estimate of time needed to complete: _____
+Colaboration: Don Bandy - UML diagram for lab 7.
 
-Start time: _____
+Collaboration: Mark Thanadabouth - UML diagram for lab 8.
 
-Finish time: _____
 
-Actual time needed to complete: _____
+Name of feature: Created my Map and Handle Sbmit
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 7:15
+
+Finish time: 11:20
+
+Actual time needed to complete: 4.5 hours
+[UMl Guide for lab 07](Lab07-UMLWRRC-1.jpeg)
+[UMl Guide for lab 08](lab08_UML.jpeg)
+[UMl Guide for lab 06](umlguide.jpeg)
+
