@@ -4,7 +4,7 @@ import Main from './Main'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
-import Image from 'react-bootstrap/Image'
+import Map from './map'
 
 class App extends React.Component {
 
@@ -14,9 +14,9 @@ class App extends React.Component {
       city: '',
       showCity: false,
       showCityName: false,
-      showCityImg: false,
-      lat: 47.60621,
-      lon: -122.33207,
+      showCityImage: false,
+      lat: "",
+      lon: "",
       renderLatLon: false,
       renderError: false,
       imgSrc: "",
@@ -40,6 +40,7 @@ class App extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       let request = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.city}&format=json`)
       console.log(request);
@@ -52,11 +53,11 @@ class App extends React.Component {
         renderlatlon: true,
         renderError: false,
         displayWeather: true,
-        city: submitResults.data[0].display_name,
-        lat: submitResults.data[0].lat,
-        lon: submitResults[0].lon,
-        imgSrc: imageSrc
+        city: request.data[0].display_name,
+        lat: request.data[0].lat,
+        lon: request.data[0].lon,
       })
+
     } catch (error) {
       console.log('my error', error.response);
 
@@ -66,13 +67,12 @@ class App extends React.Component {
         renderLatLon: false,
         showCityImage: false,
         errorMessage: `Error: ${error.response.status}, ${error.response.data.error}`,
-      })
+      });
     }
-
+  }
 render() {
-      let displayUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.lat},${this.state.lon}&zoom=15`
-      console.log(displayUrl);
-      
+     
+console.log(this.state)
       return (
         <>
           <Form onSubmit={this.handleSubmit}>
@@ -81,11 +81,31 @@ render() {
 
             <Button type="submit">Explore</Button>
           </Form>
-          <Image src={displayUrl} />
-          {/* <Main /> */}
+
+<p>{this.state.city}</p>
+
+          {this.state.showCityImage && 
+          <Map lat={this.state.lat} lon={this.state.lon}/>
+          }
+
+
+          <Main handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          getData={this.getData}
+          showCityImg={this.showCity}
+          showCityName={this.showCityName}
+          renderLatLon={this.renderLatLon}
+          renderError={this.renderError}
+          showWeather={this.state.showWeather}
+          city={this.state.city}
+          imgSrc={this.state.imgSrc}
+          lat={this.state.lat}
+          lon={this.state.lon}
+          errorMessage={this.state.error}
+          
+          />
         </>
       )
     }
   }
-
   export default App;
