@@ -1,7 +1,7 @@
 import React from "react"
 import Image from 'react-bootstrap/Image'
 import Card from 'react-bootstrap/Card'
-import Map from '/map.js'
+// import Map from '/map.js'
 
 
 class Map extends React.Component{
