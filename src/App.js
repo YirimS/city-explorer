@@ -43,7 +43,7 @@ class App extends React.Component {
 
     try {
       let request = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.city}&format=json`)
-      console.log(request);
+      console.log(request.data[0].lat);
       // plug in your image here
 
       // callback/render funtion goes here maybe?
@@ -84,6 +84,7 @@ console.log(this.state)
 
 <p>{this.state.city}</p>
 
+{this.state.renderError ? <h1>{this.state.errorMessage}</h1> : ""}
           {this.state.showCityImage && 
           <Map lat={this.state.lat} lon={this.state.lon}/>
           }
