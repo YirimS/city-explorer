@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap';
-import  
-// import Axios from 'axios'
+ 
 class Main extends React.Component {
 
 

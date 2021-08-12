@@ -32,10 +32,11 @@ class App extends React.Component {
   }
 
   getData = async () => {
-    let weatherData = await axios.get(`http//localhost:3000/weather?city=${this.state.city}`)
+    try{let weatherData = await axios.get(`http//localhost:3001/weather?city=${this.state.city}`)
     this.setState({
       weather: weatherData.data
-    })
+    })} catch(error){console.log(error, 'getting weather data')}
+    
   }
 
   handleSubmit = async (e) => {
